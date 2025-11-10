@@ -24,10 +24,16 @@ device="$1"
 
 case "$device" in
   "VIB")
-    firmware_file="app/app_VIB.bin"
+    firmware_file="FW-V3.3-DYN.bin"
     ;;
   "TIL")
-    firmware_file="tilt360_pca_v20250221.bin"
+    firmware_file="FW-V3.9-TILT360.bin"
+    ;;
+  "VW")
+    firmware_file="app/VW_PCA_Test_v20250221.bin"
+    ;;
+  "GNSS")
+    firmware_file="app/gnss_pca_v20250221.bin"
     ;;
   *)
     echo_colored "$BLUE" "Invalid device argument. Supported devices: LSG7ACL-BILH-VIB, LSG7ACL-BILR-TIL"
@@ -50,10 +56,10 @@ read -n 1 -s -r -p "Presione una tecla para continuar..."
 
 echo_colored "$YELLOW" "\nEsperando a que el nodo se reinicie.."
 sleep 4
-echo_colored "$YELLOW" "Paso 4. Estableciendo el ID del Nodo y el ID del Producto para $device."
+#echo_colored "$YELLOW" "Paso 4. Estableciendo el ID del Nodo y el ID del Producto para $device."
 sleep 1
-./lib/configure_device.sh "$device"
-sleep 1
+#./lib/configure_device.sh "$device"
+#sleep 1
 pkill gtkterm
 sleep 1
 read -n 1 -s -r -p "Presione una tecla para terminar..."
