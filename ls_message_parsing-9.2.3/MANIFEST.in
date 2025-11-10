@@ -1,0 +1,4 @@
+include README.md
+include ls_message_parsing/messages/digital_messages/GenericModbusDataCfgs/generic_modbus_configs.json
+include ls_message_parsing/messages/digital_messages/GenericModbusDataCfgs/generic_modbus_configs.json
+include ls_message_parsing/pytransform/_pytransform.so

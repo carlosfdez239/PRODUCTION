@@ -1,63 +1,768 @@
-[0;34mVamos a cargar el bootloader en el Nodo.[0m
-[1;33mPaso 1. Verificar si ambos cables USB están conectados al Nodo.[0m
-Presione cualquier tecla para continuar...[1;33m
-Paso 2. Ejecutando la regresión para preparar el Nodo.[0m
+Vamos a cargar el bootloader en el Nodo.
+Paso 1. Verificar si ambos cables USB están conectados al Nodo.
+Presione cualquier tecla para continuar...
+Paso 2. Ejecutando la regresión para preparar el Nodo.
 spawn ./regression.sh
 regression script started
-[36m[01m      -------------------------------------------------------------------
-[39;49m[36m[01m                        STM32CubeProgrammer v2.14.0                  
-[39;49m[36m[01m      -------------------------------------------------------------------
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
 
-[39;49m[90mST-LINK SN  : 001A003B3232511939353236
-[39;49m[90mST-LINK FW  : V3J13M4
-[39;49m[90mBoard       : STLINK-V3MINIE
-[39;49m[90mVoltage     : 3,28V
-[39;49mUnlock RDP2 password succefully done!
-[39;49m[00;31mError: ST-LINK error (DEV_TARGET_NOT_HALTED)
-[39;49m[39;49mRESET the device and then press a keyRetrieving Authentication ID
-[36m[01m      -------------------------------------------------------------------
-[39;49m[36m[01m                        STM32CubeProgrammer v2.14.0                  
-[39;49m[36m[01m      -------------------------------------------------------------------
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+Unlock RDP2 password succefully done!
+SWD freq    : 3300 KHz
+Connect mode: Power Down
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
 
-[39;49m[90mST-LINK SN  : 001A003B3232511939353236
-[39;49m[90mST-LINK FW  : V3J13M4
-[39;49m[90mBoard       : STLINK-V3MINIE
-[39;49m[90mVoltage     : 3,28V
-[39;49m[39;49m[39;49m[39;49mDBGMCU_DBG_AUTH_DEVICE : 0x8CC7FE80
-[39;49m[90mSWD freq    : 8000 KHz
-[39;49m[90mConnect mode: Hot Plug
-[39;49m[90mReset mode  : Software reset
-[39;49m[90mDevice ID   : 0x481
-[39;49m[90mRevision ID : Rev X
-./regression.sh: line 28: 170608 Segmentation fault      (core dumped) $stm32programmercli $connect_no_reset getAuthID
+RESET the device and then press a keyRetrieving Authentication ID
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+DBGMCU_DBG_AUTH_DEVICE : 0xF849AFEC
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
+
 Regression to RDP 0, trustzone is left enabled/disabled depending on TRUSTZONE_ENABLE value
-[36m[01m      -------------------------------------------------------------------
-[39;49m[36m[01m                        STM32CubeProgrammer v2.14.0                  
-[39;49m[36m[01m      -------------------------------------------------------------------
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
 
-[39;49m[90mST-LINK SN  : 001A003B3232511939353236
-[39;49m[90mST-LINK FW  : V3J13M4
-[39;49m[90mBoard       : STLINK-V3MINIE
-[39;49m[90mVoltage     : 3,28V
-[39;49m[90mSWD freq    : 8000 KHz
-[39;49m[90mConnect mode: Hot Plug
-[39;49m[90mReset mode  : Software reset
-[39;49m[90mDevice ID   : 0x481
-[39;49m[90mRevision ID : Rev X
-./regression.sh: line 31: 170611 Segmentation fault      (core dumped) $stm32programmercli $connect_no_reset $rdp_0
-[36m[01m      -------------------------------------------------------------------
-[39;49m[36m[01m                        STM32CubeProgrammer v2.14.0                  
-[39;49m[36m[01m      -------------------------------------------------------------------
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
 
-[39;49m[90mST-LINK SN  : 001A003B3232511939353236
-[39;49m[90mST-LINK FW  : V3J13M4
-[39;49m[90mBoard       : STLINK-V3MINIE
-[39;49m[90mVoltage     : 3,28V
-[39;49m[00;31mError: ST-LINK error (DEV_TARGET_NOT_HALTED)
-[39;49m[39;49m2nd connect tentative with frequency (8MHz)
-[39;49m[90mST-LINK SN  : 001A003B3232511939353236
-[39;49m[90mST-LINK FW  : V3J13M4
-[39;49m[90mBoard       : STLINK-V3MINIE
-[39;49m[90mVoltage     : 3,28V
-[39;49m[00;31mError: ST-LINK error (DEV_TARGET_NOT_HALTED)
-[39;49m[39;49mregression script failed, press a key
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x40022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x40022068
+  Size          : 8 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: rdp, value: 0xAA, was not modified.
+Warning: Option Byte: unlock_1a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1b, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2b, value: 0x1, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x40022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Error: Expected value for Option Byte "unlock_2b": 0x1, found: 0x0
+Error: Option Byte Programming failed Or modified by application after OB_LAUNCH
+
+Time elapsed during option Bytes configuration: 00:00:02.121
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: rdp, value: 0xAA, was not modified.
+Warning: Option Byte: tzen, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1b, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2b, value: 0x1, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.002
+Clear previous OEM2 key
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Lock RDP2 password successfully done
+Provision default OEM2 key
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Lock RDP2 password successfully done
+Remove bank1 protection
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: wrp1a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1a_pstrt, value: 0xFF, was not modified.
+Warning: Option Byte: wrp1b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1b_pstrt, value: 0xFF, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.119
+Remove bank2 protection and erase all
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: wrp2a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2a_pstrt, value: 0xFF, was not modified.
+Warning: Option Byte: wrp2b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2b_pstrt, value: 0xFF, was not modified.
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.117
+
+Mass erase ... 
+
+Mass erase successfully achieved
+Remove hdp protection
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: hdp1_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp1en, value: 0x0, was not modified.
+Warning: Option Byte: hdp2_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp2en, value: 0x0, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.002
+Set default OB 1 (dual bank, swap bank, sram2 reset, secure entry point, bank 1 full secure)
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: boot_lock, value: 0x0, was not modified.
+Warning: Option Byte: dbank, value: 0x1, was not modified.
+Warning: Option Byte: nsbootadd0, value: 0x100000, was not modified.
+Warning: Option Byte: nsbootadd1, value: 0x17F200, was not modified.
+Warning: Option Byte: nswboot0, value: 0x1, was not modified.
+Warning: Option Byte: swap_bank, value: 0x0, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.118
+Set default OB 2 (bank 2 full secure)
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.118
+regression script Done, press a key
+Paso 3. Descargando el bootloader en el Nodo.
+spawn ./SBSFU_UPDATE.sh
+SBSFU_UPDATE started
+Write SBSFU_Appli Secure
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+      -------------------------------------------------------------------
+        Choose flashing speed for Cortex M33 series.(default speed=Reliable)                  
+      -------------------------------------------------------------------
+
+
+
+Memory Programming ...
+Opening and parsing file: s_app_init.bin
+  File          : s_app_init.bin
+  Size          : 183,65 KB 
+  Address       : 0x0C026000 
+
+
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [19 41]
+Download in Progress:
+[=                                                 ]   2% [==                                                ]   4% [===                                               ]   6% [====                                              ]   8% [=====                                             ]  10% [======                                            ]  12% [=======                                           ]  14% [========                                          ]  16% [=========                                         ]  18% [==========                                        ]  20% [===========                                       ]  22% [============                                      ]  24% [=============                                     ]  26% [==============                                    ]  28% [===============                                   ]  30% [================                                  ]  32% [=================                                 ]  34% [==================                                ]  36% [===================                               ]  38% [====================                              ]  40% [=====================                             ]  42% [======================                            ]  44% [=======================                           ]  46% [========================                          ]  48% [=========================                         ]  50% [==========================                        ]  52% [===========================                       ]  54% [============================                      ]  56% [=============================                     ]  58% [==============================                    ]  60% [===============================                   ]  62% [================================                  ]  64% [=================================                 ]  66% [==================================                ]  68% [===================================               ]  70% [====================================              ]  72% [=====================================             ]  74% [======================================            ]  76% [=======================================           ]  78% [========================================          ]  80% [=========================================         ]  82% [==========================================        ]  84% [===========================================       ]  86% [============================================      ]  88% [=============================================     ]  90% [==============================================    ]  92% [===============================================   ]  94% [================================================  ]  96% [================================================= ]  98% [==================================================] 100% 
+
+File download complete
+Time elapsed during download operation: 00:00:08.768
+
+
+
+Verifying ...
+
+
+Read progress:
+[==================================================] 100% 
+
+Download verified successfully 
+
+
+SBSFU_Appli Secure Written
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+      -------------------------------------------------------------------
+        Choose flashing speed for Cortex M33 series.(default speed=Reliable)                  
+      -------------------------------------------------------------------
+
+
+
+Memory Programming ...
+Opening and parsing file: loader.bin
+  File          : loader.bin
+  Size          : 24,00 KB 
+  Address       : 0x0C3D2000 
+
+
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [489 491]
+Download in Progress:
+[=                                                 ]   2% [==                                                ]   4% [===                                               ]   6% [====                                              ]   8% [=====                                             ]  10% [======                                            ]  12% [=======                                           ]  14% [========                                          ]  16% [=========                                         ]  18% [==========                                        ]  20% [===========                                       ]  22% [============                                      ]  24% [=============                                     ]  26% [==============                                    ]  28% [===============                                   ]  30% [================                                  ]  32% [=================                                 ]  34% [==================                                ]  36% [===================                               ]  38% [====================                              ]  40% [=====================                             ]  42% [======================                            ]  44% [=======================                           ]  46% [========================                          ]  48% [=========================                         ]  50% [==========================                        ]  52% [===========================                       ]  54% [============================                      ]  56% [=============================                     ]  58% [==============================                    ]  60% [===============================                   ]  62% [================================                  ]  64% [=================================                 ]  66% [==================================                ]  68% [===================================               ]  70% [====================================              ]  72% [=====================================             ]  74% [======================================            ]  76% [=======================================           ]  78% [========================================          ]  80% [=========================================         ]  82% [==========================================        ]  84% [===========================================       ]  86% [============================================      ]  88% [=============================================     ]  90% [==============================================    ]  92% [===============================================   ]  94% [================================================  ]  96% [================================================= ]  98% [==================================================] 100% 
+
+File download complete
+Time elapsed during download operation: 00:00:01.169
+
+
+
+Verifying ...
+
+
+Read progress:
+[==================================================] 100% 
+
+Download verified successfully 
+
+
+SBSFU_Loader Written
+Write SBSFU_SBSFU_Boot
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+      -------------------------------------------------------------------
+        Choose flashing speed for Cortex M33 series.(default speed=Reliable)                  
+      -------------------------------------------------------------------
+
+
+
+Memory Programming ...
+Opening and parsing file: sbsfu_boot.bin
+  File          : sbsfu_boot.bin
+  Size          : 82,02 KB 
+  Address       : 0x0C004000 
+
+
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [2 12]
+Download in Progress:
+[=                                                 ]   2% [==                                                ]   4% [===                                               ]   6% [====                                              ]   8% [=====                                             ]  10% [======                                            ]  12% [=======                                           ]  14% [========                                          ]  16% [=========                                         ]  18% [==========                                        ]  20% [===========                                       ]  22% [============                                      ]  24% [=============                                     ]  26% [==============                                    ]  28% [===============                                   ]  30% [================                                  ]  32% [=================                                 ]  34% [==================                                ]  36% [===================                               ]  38% [====================                              ]  40% [=====================                             ]  42% [======================                            ]  44% [=======================                           ]  46% [========================                          ]  48% [=========================                         ]  50% [==========================                        ]  52% [===========================                       ]  54% [============================                      ]  56% [=============================                     ]  58% [==============================                    ]  60% [===============================                   ]  62% [================================                  ]  64% [=================================                 ]  66% [==================================                ]  68% [===================================               ]  70% [====================================              ]  72% [=====================================             ]  74% [======================================            ]  76% [=======================================           ]  78% [========================================          ]  80% [=========================================         ]  82% [==========================================        ]  84% [===========================================       ]  86% [============================================      ]  88% [=============================================     ]  90% [==============================================    ]  92% [===============================================   ]  94% [================================================  ]  96% [================================================= ]  98% [==================================================] 100% 
+
+File download complete
+Time elapsed during download operation: 00:00:03.953
+
+
+
+Verifying ...
+
+
+Read progress:
+[==================================================] 100% 
+
+Download verified successfully 
+
+
+SBSFU_SBSFU_Boot Written
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,30V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+      -------------------------------------------------------------------
+        Choose flashing speed for Cortex M33 series.(default speed=Reliable)                  
+      -------------------------------------------------------------------
+
+
+
+Memory Programming ...
+Opening and parsing file: boardstr.bin
+  File          : boardstr.bin
+  Size          : 20,00 B 
+  Address       : 0x0C019FD0 
+
+
+Download in Progress:
+[========================================          ]  80% [==================================================] 100% 
+
+File download complete
+Time elapsed during download operation: 00:00:00.014
+
+
+
+Verifying ...
+
+
+Read progress:
+[==================================================] 100% 
+
+Download verified successfully 
+
+
+SBSFU_UPDATE script Done, press a key
+El bootloader se ha flasheado correctamente.
+Presione una tecla para terminar...

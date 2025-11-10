@@ -1,0 +1,546 @@
+regression script started
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+Unlock RDP2 password succefully done!
+SWD freq    : 3300 KHz
+Connect mode: Power Down
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
+
+RESET the device and then press a keyRetrieving Authentication ID
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+DBGMCU_DBG_AUTH_DEVICE : 0x72A32BF5
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
+
+Regression to RDP 0, trustzone is left enabled/disabled depending on TRUSTZONE_ENABLE value
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : 0x92
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x40022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x40022068
+  Size          : 8 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: rdp, value: 0xAA, was not modified.
+Warning: Option Byte: unlock_1a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1b, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2b, value: 0x1, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x40022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Error: Expected value for Option Byte "unlock_2b": 0x1, found: 0x0
+Error: Option Byte Programming failed Or modified by application after OB_LAUNCH
+
+Time elapsed during option Bytes configuration: 00:00:02.132
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: rdp, value: 0xAA, was not modified.
+Warning: Option Byte: tzen, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_1b, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2a, value: 0x1, was not modified.
+Warning: Option Byte: unlock_2b, value: 0x1, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.001
+Clear previous OEM2 key
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Lock RDP2 password successfully done
+Provision default OEM2 key
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Lock RDP2 password successfully done
+Remove bank1 protection
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: wrp1a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1a_pstrt, value: 0xFF, was not modified.
+Warning: Option Byte: wrp1b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1b_pstrt, value: 0xFF, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.122
+Remove bank2 protection and erase all
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: wrp2a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2a_pstrt, value: 0xFF, was not modified.
+Warning: Option Byte: wrp2b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2b_pstrt, value: 0xFF, was not modified.
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.124
+
+Mass erase ... 
+
+Mass erase successfully achieved
+Remove hdp protection
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: hdp1_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp1en, value: 0x0, was not modified.
+Warning: Option Byte: hdp2_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp2en, value: 0x0, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.001
+Set default OB 1 (dual bank, swap bank, sram2 reset, secure entry point, bank 1 full secure)
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: boot_lock, value: 0x0, was not modified.
+Warning: Option Byte: dbank, value: 0x1, was not modified.
+Warning: Option Byte: nsbootadd0, value: 0x100000, was not modified.
+Warning: Option Byte: nsbootadd1, value: 0x17F200, was not modified.
+Warning: Option Byte: nswboot0, value: 0x1, was not modified.
+Warning: Option Byte: swap_bank, value: 0x0, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.125
+Set default OB 2 (bank 2 full secure)
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 004200263033510735393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 3,29V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x481
+Revision ID : Rev X
+Device name : STM32U5xx
+Flash size  : 4 MBytes (default)
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+
+PROGRAMMING OPTION BYTES AREA ...
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 32 Bytes
+
+[==================================================] 100% 
+
+  Bank          : 0x01
+  Address       : 0x50022060
+  Size          : 16 Bytes
+
+[==================================================] 100% 
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+
+Time elapsed during option Bytes configuration: 00:00:02.122
+regression script Done, press a key

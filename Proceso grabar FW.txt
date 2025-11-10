@@ -1,0 +1,7 @@
+Para grabar desde bootloader o FW definitivo
+
+./ls_updater.py --port=/dev/ttyUSB0 --file="tilt360_pca_v20250221.bin"
+
+Para grabar desde PCA-test
+
+~/Documents/G7/PRODUCTION$ python3 Install_FW.py /dev/ttyUSB0 FW-V3.9-TILT360.bin

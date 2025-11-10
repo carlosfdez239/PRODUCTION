@@ -283,10 +283,12 @@ def main():
     )
     args = parser.parse_args()
 
-    abs_path = ""
+    abs_path = "FW-V3.9-TILT360.bin"
     if args.file != "":
         abs_path = os.path.abspath(args.file)
-
+    print("")
+    print("========================================")
+    print("")
     print(f"{BRAND_BLUE}Loadsensing DFU Tool{RESET}")
     print("")
     print("========================================")

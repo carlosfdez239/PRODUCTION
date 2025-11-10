@@ -1,0 +1,57 @@
+regression script started
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+RESET the device and then press a keyRetrieving Authentication ID
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+2nd connect tentative with frequency (8MHz)
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+Regression to RDP 0, trustzone is left enabled/disabled depending on TRUSTZONE_ENABLE value
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+2nd connect tentative with frequency (8MHz)
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.14.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+2nd connect tentative with frequency (8MHz)
+ST-LINK SN  : 002400343033510635393935
+ST-LINK FW  : V3J8M3
+Board       : STLINK-V3MINIE
+Voltage     : 0,00V
+Error: No STM32 target found! If your product embeds Debug Authentication, please perform a discovery using Debug Authentication
+regression script failed, press a key

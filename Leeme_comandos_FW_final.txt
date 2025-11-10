@@ -1,0 +1,5 @@
+Factory reset
+\x08\x75\xb5\x44\xa2
+
+Health extendido
+|x0e
