@@ -24,7 +24,7 @@ device="$1"
 
 case "$device" in
   "VIB")
-    firmware_file="FW-V3.3-DYN.bin"
+    firmware_file="FW-V3.15-VIB.bin"
     ;;
   "TIL")
     firmware_file="FW-V3.9-TILT360.bin"

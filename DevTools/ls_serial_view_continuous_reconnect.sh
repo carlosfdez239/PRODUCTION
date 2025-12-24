@@ -36,7 +36,7 @@ fi
 
 while :
 do
-    /usr/bin/env python3 -u ls_serial_view.py "$@" 2>/dev/null
+    /usr/bin/env python3.9 -u ls_serial_view.py "$@" 2>/dev/null
     sleep 1
 done
 

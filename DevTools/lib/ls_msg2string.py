@@ -2,17 +2,19 @@ import logging as _logging
 import math as _math
 import struct as _struct
 
-import ls_message_parsing
+#import ls_message_parsing
 
-ls_message_parsing.SHOW_HIDDEN_FIELDS = True
+
 import json as _json
 from ast import literal_eval
 from re import sub as _sub
 
 # import numpy
-import generic_modbus_cfgs as gmcfgs
+#import generic_modbus_cfgs as gmcfgs
 from ls_message_parsing.ls_message_parsing import decode_msg as _decode_msg
 from ls_message_parsing.utils.time_utils import second_to_time_iso8601 as _second_to_time_iso8601
+import ls_message_parsing
+ls_message_parsing.SHOW_HIDDEN_FIELDS = True
 
 # Global variables
 PRCODE = 0
@@ -169,101 +171,101 @@ def _is_out_of_range(is_signed, num_bits, raw_value):
     return raw_value == check
 
 
-def _get_gm_data_str(msg):
+# def _get_gm_data_str(msg):
 
-    msg_hdr = _struct.unpack("!IH", msg[:6])
-    gm_data_str = "; Time: %u (%s)" % (msg_hdr[0], _second_to_time_iso8601(msg_hdr[0]))
+#     msg_hdr = _struct.unpack("!IH", msg[:6])
+#     gm_data_str = "; Time: %u (%s)" % (msg_hdr[0], _second_to_time_iso8601(msg_hdr[0]))
 
-    # Config ID field
-    config_id = msg_hdr[1]
-    gm_data_str += "; Config ID: %u" % config_id
+#     # Config ID field
+#     config_id = msg_hdr[1]
+#     gm_data_str += "; Config ID: %u" % config_id
 
-    # Get Frame Header
-    bitoffset = 0
-    frame_number = _extract_bits_from_array(msg[6:], bitoffset, 4)
-    bitoffset += 4
-    total_sensors = _extract_bits_from_array(msg[6:], bitoffset, 6)
-    bitoffset += 6
-    sensors_in_msg = _extract_bits_from_array(msg[6:], bitoffset, 6)
-    bitoffset += 6
-    gm_data_str += "; Frame Num: %u; Total Sensors: %u; Num Sensors: %u;" % (
-        frame_number,
-        total_sensors,
-        sensors_in_msg,
-    )
+#     # Get Frame Header
+#     bitoffset = 0
+#     frame_number = _extract_bits_from_array(msg[6:], bitoffset, 4)
+#     bitoffset += 4
+#     total_sensors = _extract_bits_from_array(msg[6:], bitoffset, 6)
+#     bitoffset += 6
+#     sensors_in_msg = _extract_bits_from_array(msg[6:], bitoffset, 6)
+#     bitoffset += 6
+#     gm_data_str += "; Frame Num: %u; Total Sensors: %u; Num Sensors: %u;" % (
+#         frame_number,
+#         total_sensors,
+#         sensors_in_msg,
+#     )
 
-    bitoffset = 0
-    if total_sensors > 0:
-        # Init the object
-        gm_cfgs_obj = gmcfgs.GenericModbusDataCfgs(config_id)
+#     bitoffset = 0
+#     if total_sensors > 0:
+#         # Init the object
+#         gm_cfgs_obj = gmcfgs.GenericModbusDataCfgs(config_id)
 
-        if gm_cfgs_obj.is_valid_cfg:
-            sensors_per_frame = gm_cfgs_obj.get_sensors_per_frame()
-            # Check if is eod
-            eod = (
-                1
-                if (
-                    ((frame_number * sensors_per_frame) - (sensors_per_frame - sensors_in_msg))
-                    == total_sensors
-                )
-                else 0
-            )
-            gm_data_str += " EOD %u;" % (eod)
+#         if gm_cfgs_obj.is_valid_cfg:
+#             sensors_per_frame = gm_cfgs_obj.get_sensors_per_frame()
+#             # Check if is eod
+#             eod = (
+#                 1
+#                 if (
+#                     ((frame_number * sensors_per_frame) - (sensors_per_frame - sensors_in_msg))
+#                     == total_sensors
+#                 )
+#                 else 0
+#             )
+#             gm_data_str += " EOD %u;" % (eod)
 
-            for i in range(0, sensors_in_msg):
-                num_sensor = (sensors_per_frame * (frame_number - 1)) + (i + 1)
-                gm_data_str += " Sensor %u " % (num_sensor) + " "
+#             for i in range(0, sensors_in_msg):
+#                 num_sensor = (sensors_per_frame * (frame_number - 1)) + (i + 1)
+#                 gm_data_str += " Sensor %u " % (num_sensor) + " "
 
-                # Sensor error bit
-                error_bit = _extract_bits_from_array(msg[8:], bitoffset, 1)
-                bitoffset += 1
+#                 # Sensor error bit
+#                 error_bit = _extract_bits_from_array(msg[8:], bitoffset, 1)
+#                 bitoffset += 1
 
-                if error_bit == 0:
-                    # Sensor data
-                    channel = 0
-                    for chn in gm_cfgs_obj.channels_info:
-                        channel += 1
-                        value = _extract_bits_from_array(msg[8:], bitoffset, chn["data_size"])
-                        bitoffset += chn["data_size"]
+#                 if error_bit == 0:
+#                     # Sensor data
+#                     channel = 0
+#                     for chn in gm_cfgs_obj.channels_info:
+#                         channel += 1
+#                         value = _extract_bits_from_array(msg[8:], bitoffset, chn["data_size"])
+#                         bitoffset += chn["data_size"]
 
-                        if _is_out_of_range(chn["signed_value"], chn["data_size"], value):
-                            value = "OutOfRange"
-                            gm_data_str += chn["label"] + ": " + str(value) + ", "
-                        else:
-                            if chn["signed_value"]:
-                                value = _uint_to_int(value, chn["data_size"])
+#                         if _is_out_of_range(chn["signed_value"], chn["data_size"], value):
+#                             value = "OutOfRange"
+#                             gm_data_str += chn["label"] + ": " + str(value) + ", "
+#                         else:
+#                             if chn["signed_value"]:
+#                                 value = _uint_to_int(value, chn["data_size"])
 
-                            if chn["data_conversion"]:
-                                if chn["conversion_func_python"] == "":
-                                    warning_message = "No conversion function, RAW data: "
-                                    value = warning_message + str(value)
-                                else:
-                                    func = eval(chn["conversion_func_python"])
-                                    value = func(value)
+#                             if chn["data_conversion"]:
+#                                 if chn["conversion_func_python"] == "":
+#                                     warning_message = "No conversion function, RAW data: "
+#                                     value = warning_message + str(value)
+#                                 else:
+#                                     func = eval(chn["conversion_func_python"])
+#                                     value = func(value)
 
-                            gm_data_str += (
-                                chn["label"] + ": " + str(value) + " " + chn["unit"] + ", "
-                            )
-                else:
-                    gm_data_str += " No response"
+#                             gm_data_str += (
+#                                 chn["label"] + ": " + str(value) + " " + chn["unit"] + ", "
+#                             )
+#                 else:
+#                     gm_data_str += " No response"
 
-                gm_data_str += ";"
-        else:
-            gm_data_str += (
-                " Parsing error: The configuration to parse this message was not found!!!!"
-            )
-    else:
-        gm_data_str += " General error: "
-        # Reserved
-        _extract_bits_from_array(msg[8:], bitoffset, 2)
-        bitoffset += 2
-        error_code = _extract_bits_from_array(msg[8:], bitoffset, 4)
-        bitoffset += 4
-        error_param = _extract_bits_from_array(msg[8:], bitoffset, 10)
-        bitoffset += 10
-        gm_data_str += "Code: %u, Parameter: %u" % (error_code, error_param)
+#                 gm_data_str += ";"
+#         else:
+#             gm_data_str += (
+#                 " Parsing error: The configuration to parse this message was not found!!!!"
+#             )
+#     else:
+#         gm_data_str += " General error: "
+#         # Reserved
+#         _extract_bits_from_array(msg[8:], bitoffset, 2)
+#         bitoffset += 2
+#         error_code = _extract_bits_from_array(msg[8:], bitoffset, 4)
+#         bitoffset += 4
+#         error_param = _extract_bits_from_array(msg[8:], bitoffset, 10)
+#         bitoffset += 10
+#         gm_data_str += "Code: %u, Parameter: %u" % (error_code, error_param)
 
-    return gm_data_str
+#     return gm_data_str
 
 
 # 1 -> protocol & num channels; 2-177 -> ids of the channels.
@@ -2762,8 +2764,8 @@ def _get_type_msg_str(msg_type, msg):
         type_msg_str = "Laser " + _get_laser_data_str(msg)
     elif msg_type == 74:
         type_msg_str = "Vw magnitude " + _get_vw_magnitude_data_str(msg)
-    elif msg_type == 75:
-        type_msg_str = "Generic Modbus " + _get_gm_data_str(msg)
+    # elif msg_type == 75:
+    #     type_msg_str = "Generic Modbus " + _get_gm_data_str(msg)
     # elif msg_type == 76:  # Commented this so that ls message parsing lib will be called always for decode msg
     #     type_msg_str = "Tilt360 " + _get_tilt360_data_str(msg)
     # elif msg_type == 77:  # Commented this so that ls message parsing lib will be called always for decode msg
@@ -3465,7 +3467,7 @@ def inputmsg2string(msg):
         for i in msg:
             msg_str += "%02x " % (ord(i))
         _logging.debug(msg_str)
-
+    
     return msg_str
 
 

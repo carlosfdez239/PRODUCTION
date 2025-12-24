@@ -107,9 +107,9 @@ def main():
     usb_path = "/dev/ttyUSB0"
     #binary_file = "/home/carlos/Documentos/G7/PRODUCTION/FW-V3.3-DYN.bin"
     #binary_file = "/home/carlos/Documentos/G7/PRODUCTION/tilt360_pca_v20250221.bin"
-    binary_file = "/home/carlos/Documentos/G7/PRODUCTION/app/gnss_pca_v20250221.bin"
+    binary_file = "FW-V3.15-VIB.bin"
     # Abrir puerto serie
-    ser = serial.Serial(usb_path, 115200, timeout=0.1)
+    ser = serial.Serial(usb_path, 115200, timeout=0.5)
 
     # Arrancar hilo que lee puerto serie y muestra TODO lo que llegue (información del bootloader, logs, etc)
     lector_thread = threading.Thread(target=read_from_port, args=(ser,), daemon=True)
@@ -117,14 +117,14 @@ def main():
 
     # Enviar comandos iniciales con pausas
     #print("Mandando TEST_REBOOT")
-    ser.write("echo -e '\nTEST_REBOOT\n'".encode('utf-8', errors='ignore'))
+    #ser.write("echo -e '\nTEST_REBOOT\n'".encode('utf-8', errors='ignore'))
     #ser.flush()
-    time.sleep(0.3)
+    time.sleep(0.7)
 
     print("writing")
     ser.write(b"worldsensing")
     #ser.flush()
-    time.sleep(0.2)
+    time.sleep(0.3)
 
     ser.write(b"3")
     #ser.flush()

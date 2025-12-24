@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.9
 import datetime
 import logging
 import re
 import sys
+import json
 
-sys.path.append("./lib/")
+#sys.path.append("./lib/")
 import ls_msg2string as ls_msg2string
 import serial  # from pyserial, avoid installing just 'serial' package (errors)
 import serialbsc as serialbsc
@@ -18,7 +19,8 @@ def get_utc_timestamp():
 
 
 def main():
-    dev_tty = sys.argv[1]
+    #dev_tty = sys.argv[1]
+    dev_tty = "/dev/ttyUSB0"
     one_line_flag = False
     use_socket = False
     if len(sys.argv) == 3:
@@ -47,20 +49,25 @@ def main():
 
     while True:
         msg_dict = serialbsc.rcv_message_from_mote(ser)
+        #print (f"\n\nEsto es msg_dict --> {msg_dict}\n\n")
         msg = msg_dict["Data"]
+        #print (f"\n\nEste es el mensaje recibido tras la transformación a msg_dict --> {msg}\n")
         if one_line_flag:
             msg_str = "" + str(get_utc_timestamp()) + ";" + str(datetime.datetime.now()) + "; "
             for i in msg:
                 msg_str += "%02x " % (i)
             msg_str += ";" + ls_msg2string.msg2string(msg)
-            print(msg_str)
+            #print(f"\nPrimera transformación de msg_str si one_line_flag --> {msg_str}\n")
         else:
             msg_str = "\n[" + str(datetime.datetime.now()) + "] "
             # msg_str="\n[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] "
             for i in msg:
                 msg_str += "%02x " % (i)
-            print(msg_str)
-            print(ls_msg2string.msg2string(msg))
+            #print(f"\ntransformación de msg_str no one_line_flag --> {msg_str}\n")
+            
+            # print(f"\n{ls_msg2string.msg2string(msg)}\n")
+            print(json.dumps(ls_msg2string.msg2json(msg), indent=4))
+            
         sys.stdout.flush()
 
 
